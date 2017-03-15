@@ -5,11 +5,11 @@
             foreach($chamadas as $chamada): 
         ?>
         <div class="item-grid-home sombra radious">
-            <h4>
+            <h3 style="font-size:18px;">
                  <?php
                       echo  $chamada->nome; 
                     ?>
-            </h4>
+            </h3>
              <?php
              echo anchor(
                         'receitas/ver/'.$chamada->slug_receita, img('assets/imgs/receitas/'.$chamada->foto)
