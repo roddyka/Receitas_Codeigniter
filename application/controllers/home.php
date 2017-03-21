@@ -12,7 +12,7 @@ class Home extends CI_Controller {
         $data['categorias'] = $this->db->get('categorias')->result();
         
         $this->db->order_by('id_receita', 'random');
-        $data2['chamadas'] = $this->db->get('receitas',4)->result();
+        $data2['chamadas'] = $this->db->get('receitas',6)->result();
         
 		$this->load->view('html_header');
         $this->load->view('cabecalho');

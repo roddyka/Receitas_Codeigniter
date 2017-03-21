@@ -44,4 +44,23 @@ class Receitas extends CI_Controller {
         $this->load->view('rodape');
         $this->load->view('html_footer');
     }
+    
+    public function buscar(){
+        $data['categorias'] = $this->db->get('categorias')->result();
+        
+        $busca = $this->input->post('busca');
+        $data2['busca'] = $busca;
+        
+        $this->db->like('nome',$busca);
+        $this->db->or_like('texto',$busca);
+        $data2['receitas'] = $this->db->get('receitas')->result();
+        
+        $this->load->view('html_header');
+        $this->load->view('cabecalho');
+        $this->load->view('menu_categorias', $data);
+        $this->load->view('resultado_busca', $data2);
+        $this->load->view('rodape');
+        $this->load->view('html_footer');
+        
+    }
 }
