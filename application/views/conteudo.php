@@ -83,10 +83,16 @@ foreach($chamadas as $chamada):
 <!-- Search Form -->
 <div class="widget search-form">
 <nav class="search">
-<form action="#" method="get">
-    <button><i class="fa fa-search"></i></button>
-    <input class="search-field" type="text" placeholder="Search for recipes" value=""/>
-</form>
+ <div id="formbusca">
+        <?php echo form_open(base_url().'index.php/receitas/buscar');
+            echo form_label("Buscar", "busca");
+            $data = array('name'=>'busca','id'=>'busca','class'=>'fa fa-search');
+            echo form_input($data);
+            echo form_submit('button_buscar','Buscar');
+            echo form_close();
+       
+        ?>
+    </div>
 </nav>
 <div class="clearfix"></div>
 </div>
