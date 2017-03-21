@@ -47,14 +47,18 @@
 		
 
 
-		<div class="recipe-container six columns">  
+		<div class="recipe-container">  
 
 			<div class="ingredients-container">
                     
-				<?php  echo img('assets/imgs/receitas/'.$rec->foto);  echo "<p itemprop='description'>". nl2br($rec->texto) . "</p>"; ?>
+				<?php  echo "<p itemprop='description'>". nl2br($rec->texto) . "</p>"; ?>
 
 			</div> 
-			
+			<div class="ingredients-container">
+                    
+				<?php  echo img('assets/imgs/receitas/'.$rec->foto); ?>
+
+			</div> 
 		</div>
 		<a href="javascript:history.go(-1)" class="print"><i class="fa fa-back"></i> Voltar</a>
 		<div class="clearfix"></div>
